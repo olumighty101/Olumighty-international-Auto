@@ -1,115 +1,88 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Olumighty International Auto — premium and quality vehicles in Lagos, Nigeria.">
-  <title>Olumighty International Auto | Premium Vehicles</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080808">
+<title>Olumighty International Auto | Luxury Cars in Lagos</title>
+<meta name="description" content="Browse available vehicles at Olumighty International Auto in Lagos, Nigeria. View car photos, specifications and prices, then enquire on WhatsApp.">
+<style>
+:root{--black:#080808;--panel:#121212;--red:#e50920;--gold:#e8b83f;--white:#f7f4ed;--muted:#bdb8ae;--line:#3b3020}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--black);color:var(--white);font-family:Arial,Helvetica,sans-serif;line-height:1.5}
+a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer}.wrap{width:min(1180px,92%);margin:auto}
+header{position:sticky;top:0;z-index:10;background:#080808f2;border-bottom:1px solid var(--gold);backdrop-filter:blur(10px)}
+.nav{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:12px}.crest{width:48px;height:48px;border:2px solid var(--gold);color:var(--gold);display:grid;place-items:center;font-family:Georgia,serif;font-size:20px;font-weight:bold;clip-path:polygon(50% 0,100% 15%,90% 75%,50% 100%,10% 75%,0 15%)}.brand strong{display:block;color:var(--gold);font: bold 22px Georgia,serif;letter-spacing:.5px}.brand small{display:block;color:#fff;font-size:10px;letter-spacing:1.5px}.navlinks{display:flex;gap:18px;align-items:center;flex-wrap:wrap;font-size:12px;text-transform:uppercase}.navlinks a:hover{color:var(--gold)}
+.hero{background:radial-gradient(ellipse at 75% 25%,#5b1714 0,#1a0d0b 27%,#080808 66%);border-bottom:2px solid var(--red);padding:72px 0 76px;position:relative;overflow:hidden}.hero:after{content:"OI";position:absolute;right:5%;top:0;font: bold 260px Georgia,serif;color:#ffffff08;pointer-events:none}.eyebrow{color:var(--gold);font-size:12px;font-weight:bold;letter-spacing:2px;text-transform:uppercase}.hero h1{font: bold clamp(38px,6vw,70px)/1.02 Georgia,serif;max-width:700px;margin:16px 0}.hero h1 em{color:var(--red);font-style:normal}.hero p{max-width:570px;color:#ddd;font-size:17px}.btn{display:inline-block;border:0;border-radius:30px;padding:13px 20px;background:var(--red);color:#fff;font-weight:bold;font-size:13px;letter-spacing:.4px}.btn:hover{filter:brightness(1.15)}.btn.gold{background:var(--gold);color:#111}.hero .btn{margin-top:14px}
+section{padding:54px 0}.section-head{text-align:center;margin-bottom:26px}.section-head h2{font: bold clamp(28px,4vw,40px) Georgia,serif;color:var(--gold);margin:0 0 8px}.section-head p{color:var(--muted);margin:0}.tools{display:flex;gap:10px;justify-content:space-between;align-items:center;flex-wrap:wrap;margin:24px 0}.tools input,.tools select{background:#151515;border:1px solid #55472d;color:#fff;border-radius:8px;padding:12px 14px;min-width:190px}.tools input{flex:1}.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}.car{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;transition:transform .2s,border-color .2s}.car:hover{transform:translateY(-4px);border-color:var(--gold)}.photo{height:180px;background:linear-gradient(135deg,#201a12,#080808);display:grid;place-items:center;position:relative;overflow:hidden}.photo img{width:100%;height:100%;object-fit:cover;display:block}.photo .placeholder{padding:20px;text-align:center;color:#bca46b;font-size:13px}.number{position:absolute;left:10px;top:10px;background:var(--gold);color:#111;font-weight:bold;border-radius:5px;padding:3px 8px}.car-body{padding:14px}.car h3{font-size:16px;margin:0 0 5px}.year{color:var(--muted);font-size:13px}.price{color:var(--gold);font-size:18px;font-weight:bold;margin:9px 0 12px}.status{display:inline-block;color:#e6d5a4;border:1px solid #665329;border-radius:20px;font-size:10px;padding:3px 8px;margin-bottom:12px}.actions{display:flex;gap:8px}.actions button,.actions a{flex:1;text-align:center;border:1px solid var(--red);border-radius:7px;padding:9px 6px;font-size:12px;font-weight:bold}.actions button{background:var(--red);color:#fff}.actions a{color:#fff}.actions button:hover,.actions a:hover{background:var(--gold);border-color:var(--gold);color:#111}
+.features{background:#0e0e0e;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.feature-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center}.feature{padding:12px}.feature b{display:block;color:var(--gold);margin:8px 0}.feature p{font-size:13px;color:var(--muted);margin:0}
+footer{padding:38px 0 20px;background:#050505;border-top:2px solid var(--gold)}.footgrid{display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:30px}.footgrid h3{color:var(--gold);font-size:14px;text-transform:uppercase;letter-spacing:1px}.footgrid p,.footgrid a{color:#d4d0c8;font-size:13px;overflow-wrap:anywhere}.socials{display:flex;flex-wrap:wrap;gap:9px}.socials a{border:1px solid #57472a;padding:8px 10px;border-radius:7px}.socials a:hover{background:var(--red);color:white}.copyright{border-top:1px solid #302718;margin-top:25px;padding-top:16px;text-align:center;color:#9b968d;font-size:12px}
+dialog{width:min(700px,92vw);max-height:90vh;overflow:auto;background:#111;color:#fff;border:1px solid var(--gold);border-radius:14px;padding:0}dialog::backdrop{background:#000c}.modal-head{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-bottom:1px solid var(--line)}.modal-head h2{margin:0;color:var(--gold);font: bold 24px Georgia,serif}.close{background:transparent;color:#fff;border:1px solid #6a5a3b;border-radius:6px;padding:5px 10px}.modal-content{padding:20px}.modal-content img{width:100%;max-height:360px;object-fit:contain;background:#080808;border-radius:8px}.modal-content p{color:#ddd}.modal-price{font-size:24px;color:var(--gold);font-weight:bold}
+@media(max-width:900px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.nav{align-items:flex-start;padding:14px 0;flex-direction:column}.navlinks{gap:12px}.footgrid{grid-template-columns:1fr 1fr}.hero{padding:54px 0}}
+@media(max-width:560px){.grid{grid-template-columns:1fr}.photo{height:220px}.feature-grid{grid-template-columns:repeat(2,1fr)}.footgrid{grid-template-columns:1fr}.brand strong{font-size:19px}.hero p{font-size:15px}.tools input,.tools select{width:100%}}
+</style>
 </head>
 <body>
-  <div class="topline"></div>
-  <header class="site-header">
-    <a class="brand" href="#home" aria-label="Olumighty International Auto home">
-      <span class="brand-mark">OI<span>A</span></span>
-      <span class="brand-name">OLUMIGHTY <small>INTERNATIONAL AUTO</small></span>
-    </a>
-    <nav aria-label="Main navigation">
-      <a href="#home">Home</a><a href="#about">About Us</a><a href="#vehicles">Vehicles</a><a href="#why-us">Why Us</a><a href="#contact">Contact</a>
-    </nav>
-    <a class="header-cta" href="https://wa.me/2348082761977" target="_blank" rel="noopener">Chat on WhatsApp <span>↗</span></a>
-  </header>
-
-  <main>
-    <section class="hero" id="home">
-      <div class="hero-shade"></div>
-      <div class="hero-content">
-        <p class="eyebrow"><span></span> PREMIUM VEHICLES · LAGOS, NIGERIA</p>
-        <h1>DRIVE YOUR<br><em>STANDARD.</em></h1>
-        <p class="hero-copy">Your trusted destination for premium and quality vehicles. Discover confidence, comfort and class with every drive.</p>
-        <div class="hero-actions">
-          <a class="btn btn-gold" href="#vehicles">Explore Our Vehicles <span>↗</span></a>
-          <a class="btn btn-outline" href="https://wa.me/2348082761977" target="_blank" rel="noopener">Speak to Our Team</a>
-        </div>
-        <div class="hero-note"><span class="note-line"></span> QUALITY YOU CAN TRUST. SERVICE YOU DESERVE.</div>
-      </div>
-      <div class="hero-stamp"><span>OIA</span><small>EXCELLENCE<br>IN MOTION</small></div>
-    </section>
-
-    <section class="intro section" id="about">
-      <div class="section-kicker">WELCOME TO OLUMIGHTY</div>
-      <div class="intro-grid">
-        <h2>More than a car.<br><em>It's your next chapter.</em></h2>
-        <p>At Olumighty International Auto, we make finding your next vehicle a confident and rewarding experience. We focus on quality vehicles, clear communication and customer service you can count on.</p>
-      </div>
-    </section>
-    
-<section class="vehicles section" id="vehicles">
-  <div class="section-heading">
-    <div>
-      <div class="section-kicker">FIND YOUR DRIVE</div>
-      <h2>Explore <em>Our Collection</em></h2>
-    </div>
-    <p>Quality vehicles, excellent service and a premium buying experience.</p>
-  </div>
-
-  <div class="vehicle-grid">
-    <article class="vehicle-card">
-      <img src=IMG_3179.jpeg
-           alt="Car for sale at Olumighty International Auto"
-           style="width:100%;height:240px;object-fit:cover;">
-      <div class="card-copy">
-        <span>AVAILABLE VEHICLE</span>
-        <h3>MERCEDES BENZ GLE 400 </h3>
-        <p>Year:2017</p>
-        <p>Colour: BLACK</p>
-        <p>Transmission: Automatic</p>
-        <h3 style="color:#D4AF37;">Price:#37,000,000 Contact us</h3>
-        <a href="https://wa.me/2348082761977"
-           target="_blank" rel="noopener">Enquire on WhatsApp ↗</a>
-      </div>
-    </article>
-  </div>
-</section>
-        <div class="vehicle-grid">
-        <article class="vehicle-card">
-      <img src=IMG_3196.jpeg
-        alt="Car for sale at Olumighty International Auto"
-           style="width:100%;height:240px;object-fit:cover;">
-      <div class="card-copy">
-        <span>AVAILABLE VEHICLE</span>
-        <h3>MERCEDES BENZ GLE 450</h3>
-        <p>Year: 2018</p>
-        <p>Colour: WHITE</p>
-        <p>Transmission: Automatic</p>
-        <h3 style="color:#D4AF37;">Price:#52,000,000 Contact us</h3>
-        <a href="https://wa.me/2348082761977"
-           target="_blank" rel="noopener">Enquire on WhatsApp ↗</a>
-      </div>
-    </article>
-  </div>
-</section>
-    <section class="why section" id="why-us">
-      <div class="why-copy"><div class="section-kicker">THE OLUMIGHTY DIFFERENCE</div><h2>Confidence in<br><em>every kilometre.</em></h2><p>We believe buying a car should feel exciting, not complicated. Our team is here to guide you with responsive service and attention to what matters to you.</p><a class="text-link" href="https://wa.me/2348082761977" target="_blank" rel="noopener">Let's find your next car <span>↗</span></a></div>
-      <div class="benefits">
-        <div class="benefit"><span class="benefit-num">01</span><div><h3>Quality Focus</h3><p>We help you explore vehicle options that match your needs and expectations.</p></div></div>
-        <div class="benefit"><span class="benefit-num">02</span><div><h3>Personal Service</h3><p>Clear answers and helpful support from first enquiry to your next drive.</p></div></div>
-        <div class="benefit"><span class="benefit-num">03</span><div><h3>Easy Enquiries</h3><p>Reach us directly to ask about availability, details and viewing arrangements.</p></div></div>
-      </div>
-    </section>
-
-    <section class="contact-banner" id="contact"><div><div class="section-kicker">YOUR NEXT DRIVE STARTS HERE</div><h2>Ready to find <em>your car?</em></h2><p>Tell us what you are looking for. We will be glad to help.</p></div><a class="btn btn-gold" href="https://wa.me/2348082761977" target="_blank" rel="noopener">Contact Us on WhatsApp <span>↗</span></a></section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="footer-main"><a class="brand footer-brand" href="#home"><span class="brand-mark">OI<span>A</span></span><span class="brand-name">OLUMIGHTY <small>INTERNATIONAL AUTO</small></span></a><p>Premium and quality vehicles.<br>Lagos, Nigeria.</p>
-      <div class="social-area"><span class="social-label">FOLLOW OUR JOURNEY</span><div class="social-links">
-        <a href="https://www.facebook.com/share/18bZKHAWNu/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1v-2c0-.9.3-1.5 1.6-1.5h1.7V3.6c-.3 0-1.3-.1-2.4-.1-2.4 0-4.1 1.5-4.1 4.2v2.2H7.5V13h2.8v8z"/></svg></a>
-        <a href="https://www.instagram.com/olumighty_internationalauto?obrf=MTg5cHo0cWRzMHJjMQ%3D%3D&utm_source=qr" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.7" cy="6.7" r=".8" class="solid"/></svg></a>
-        <a href="https://www.tiktok.com/@olumightyintauto?_r=1&_t=ZP-9APPvrLQypq" target="_blank" rel="noopener" aria-label="TikTok" title="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.2 3h3.1c.2 1.8 1.2 3.2 3.2 3.7v3.1a8.3 8.3 0 0 1-3.2-1v6.5a6.1 6.1 0 1 1-6.1-6.1c.5 0 1 .1 1.5.2v3.3a3 3 0 1 0 1.5 2.6z"/></svg></a>
-      </div></div>
-    </div>
-    <div class="footer-bottom"><span>© 2026 Olumighty International Auto. All rights reserved.</span><span>BUILT ON TRUST. DRIVEN BY EXCELLENCE.</span></div>
-  </footer>
-</body>
-</html>
+<header><div class="wrap nav">
+<a class="brand" href="#home" aria-label="Olumighty International Auto home"><span class="crest">OI</span><span><strong>OLUMIGHTY</strong><small>INTERNATIONAL AUTO</small></span></a>
+<nav class="navlinks" aria-label="Main navigation"><a href="#home">Home</a><a href="#vehicles">Vehicles</a><a href="#about">About</a><a href="#social">Social media</a><a href="#contact">Contact</a></nav>
+</div></header>
+<main>
+<section class="hero" id="home"><div class="wrap">
+<div class="eyebrow">Premium cars · Trusted deals · Nationwide delivery</div>
+<h1>DRIVE YOUR<br><em>DREAM TODAY</em></h1>
+<p>Explore our available vehicles, view photos and specifications, and contact Olumighty International Auto for pricing, inspection and delivery arrangements.</p>
+<a class="btn" href="#vehicles">BROWSE OUR VEHICLES&nbsp; →</a>
+</div></section>
+<section id="vehicles"><div class="wrap">
+<div class="section-head"><div class="eyebrow">Find your next car</div><h2>OUR AVAILABLE VEHICLES</h2><p>Choose a car to view its details and photos. Replace the sample fields with your real stock information.</p></div>
+<div class="tools"><input id="search" type="search" placeholder="Search make or model…" aria-label="Search vehicles"><select id="availability" aria-label="Filter availability"><option value="all">All vehicles</option><option value="available">Available</option><option value="sold">Sold</option></select></div>
+<div class="grid" id="carGrid"></div>
+</div></section>
+<section class="features" id="about"><div class="wrap"><div class="feature-grid">
+<div class="feature"><div style="font-size:28px;color:var(--gold)">◇</div><b>Quality Vehicles</b><p>Ask us for vehicle history and inspection details.</p></div>
+<div class="feature"><div style="font-size:28px;color:var(--gold)">₦</div><b>Clear Pricing</b><p>Confirm price and availability with our team.</p></div>
+<div class="feature"><div style="font-size:28px;color:var(--gold)">➤</div><b>Delivery Arrangements</b><p>Discuss delivery options to your location.</p></div>
+<div class="feature"><div style="font-size:28px;color:var(--gold)">✓</div><b>Personal Assistance</b><p>We can help you choose the right vehicle.</p></div>
+</div></div></section>
+</main>
+<footer><div class="wrap">
+<div class="footgrid">
+<div><a class="brand" href="#home"><span class="crest">OI</span><span><strong>OLUMIGHTY</strong><small>INTERNATIONAL AUTO</small></span></a><p>Luxury cars. Trusted deals. Quality service.</p></div>
+<div id="social"><h3>Follow us on all platforms</h3><div class="socials">
+<a href="https://www.youtube.com/@olumightyinternationalauto" target="_blank" rel="noopener">YouTube</a>
+<a href="https://x.com/" target="_blank" rel="noopener">X</a>
+<a href="https://www.facebook.com/share/1LZqBAQiMk/?mibextid=wwXIfr" target="_blank" rel="noopener">Facebook</a>
+<a href="https://www.instagram.com/olumighty_internationalauto/" target="_blank" rel="noopener">Instagram</a>
+<a href="https://www.tiktok.com/@olumightyintauto" target="_blank" rel="noopener">TikTok</a>
+<a href="https://wa.me/2348082761977" target="_blank" rel="noopener">WhatsApp</a>
+</div><p>Update the X link to your exact company profile once you have its URL.</p></div>
+<div id="contact"><h3>Contact us</h3>
+<p>Phone: <a href="tel:+2349139258023">09139258023</a><br>WhatsApp: <a href="https://wa.me/2348082761977" target="_blank" rel="noopener">08082761977</a><br>Email: <a href="mailto:Oluchukwueze@olumightyintauto.com">Oluchukwueze@olumightyintauto.com</a><br>Address: 4 Agbabiaka Crescent, Ikorodu Road, Lagos, Nigeria</p>
+</div></div>
+<div class="copyright">© <span id="year"></span> Olumighty International Auto. All rights reserved. <a href="#home" style="color:var(--gold)">Back to top ↑</a></div>
+</div></footer>
+<dialog id="carModal"><div class="modal-head"><h2 id="modalTitle">Vehicle details</h2><button class="close" id="closeModal" aria-label="Close">Close ✕</button></div><div class="modal-content" id="modalContent"></div></dialog>
+<script>
+const vehicles = Array.from({length:20},(_,i)=>({
+ id:i+1, name:"Add vehicle make and model", year:"Add year", price:"Contact for price",
+ status:"available", image:`image/car${i+1}.jpg`,
+ description:"Add the vehicle specifications here, such as mileage, fuel type, transmission, interior colour and key features."
+}));
+const grid=document.getElementById('carGrid'), search=document.getElementById('search'), filter=document.getElementById('availability');
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function render(){
+ const term=search.value.toLowerCase().trim(), state=filter.value;
+ const shown=vehicles.filter(v=>(v.name+' '+v.year).toLowerCase().includes(term)&&(state==='all'||v.status===state));
+ grid.innerHTML=shown.map(v=>`<article class="car"><div class="photo"><img src="${v.image}" alt="${esc(v.name)}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="placeholder" style="display:none">Upload photo to<br><b>${v.image}</b></div><span class="number">${v.id}</span></div><div class="car-body"><h3>${esc(v.name)}</h3><div class="year">${esc(v.year)}</div><div class="price">${esc(v.price)}</div><span class="status">${v.status==='sold'?'SOLD':'AVAILABLE — EDIT DETAILS'}</span><div class="actions"><button type="button" onclick="showDetails(${v.id})">View Details</button><a href="https://wa.me/2348082761977?text=${encodeURIComponent('Hello Olumighty International Auto, I am interested in vehicle '+v.id+': '+v.name)}" target="_blank" rel="noopener">Enquire</a></div></div></article>`).join('');
+}
+function showDetails(id){
+ const v=vehicles.find(x=>x.id===id), modal=document.getElementById('carModal');
+ document.getElementById('modalTitle').textContent=v.name;
+ document.getElementById('modalContent').innerHTML=`<img src="${v.image}" alt="${esc(v.name)}" onerror="this.alt='Upload your photo at '+${JSON.stringify(v.image)}"><p class="modal-price">${esc(v.price)}</p><p><b>Year:</b> ${esc(v.year)}</p><p><b>Status:</b> ${v.status==='sold'?'Sold':'Available — confirm with us'}</p><p>${esc(v.description)}</p><a class="btn" href="https://wa.me/2348082761977?text=${encodeURIComponent('Hello, please send me more details about vehicle '+v.id+': '+v.name)}" target="_blank" rel="noopener">Ask about this vehicle on WhatsApp</a>`;
+ modal.showModal();
+}
+document.getElementById('closeModal').addEventListener('click',()=>document.getElementById('carModal').close());
+search.addEventListener('input',render);filter.addEventListener('change',render);
+document.getElementById('year').textContent=new Date().getFullYear();render();
+</script>
+</body></html>
