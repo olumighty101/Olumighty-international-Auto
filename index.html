@@ -64,10 +64,9 @@ dialog{width:min(700px,92vw);max-height:90vh;overflow:auto;background:#111;color
 <dialog id="carModal"><div class="modal-head"><h2 id="modalTitle">Vehicle details</h2><button class="close" id="closeModal" aria-label="Close">Close ✕</button></div><div class="modal-content" id="modalContent"></div></dialog>
 <script>
 const vehicles = Array.from({length:20},(_,i)=>({
- id:i+1, name:"Add vehicle make and model", year:"Add year", price:"Contact for price",
- status:"available", image:`image/car${i+1}.jpg`,
- description:"Add the vehicle specifications here, such as mileage, fuel type, transmission, interior colour and key features."
-}));
+ id:i+1, name:"MERCEDES-BENZ AMG GLE 63s", year:"2018", price:"Contact for price",
+ status:"available", image:IMG_3175.jpeg ,
+ description:2018 Mercedes-Benz AMG GLE 63S. A powerful luxury SUV featuring a 5.5L V8 biturbo engine, automatic transmission, premium comfort and sporty AMG styling. Contact us for price, pictures and inspection."}));
 const grid=document.getElementById('carGrid'), search=document.getElementById('search'), filter=document.getElementById('availability');
 function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
 function render(){
