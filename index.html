@@ -60,17 +60,20 @@ const cars=[
       'images/IMG_3178.jpeg'
     ]
   },
-  ...Array.from({length:18},(_,i)=>({
-    id:i+3,
-    name:`Car listing ${i+3} — add make, model and year`,
-    price:'Add price',
-    year:'',
-    fuel:'',
-    transmission:'',
-    description:'Add the actual vehicle condition, mileage, features and specifications here.',
-    photos:[sample]
-  }))
-];let selected=null,photoIndex=0,shortlist=[];const el=id=>document.getElementById(id);
+  {
+id:3,
+name:‘2018 Mercedes-Benz GLE 450 Coupe 4MATIC’,
+price:‘₦52,000,000’,
+year:‘2018’,
+fuel:‘Petrol’,
+transmission:‘Automatic’,
+description:‘FOREIGN USED — WHITE EXTERIOR. 2018 Mercedes-Benz GLE 450 Coupe 4MATIC featuring a panoramic roof and 360-degree camera. Stylish coupe design, premium comfort and all-wheel-drive capability. Other equipment should be confirmed against the actual vehicle. Price: ₦52,000,000. Contact Olumighty International Auto, Lagos, for enquiries.’,
+photos:[
+‘images/IMG_3195.jpeg’,
+‘images/IMG_3196.jpeg’,
+‘images/IMG_3231.jpeg’
+]
+},];let selected=null,photoIndex=0,shortlist=[];const el=id=>document.getElementById(id);
 function safe(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 function wa(text){return 'https://wa.me/2348082761977?text='+encodeURIComponent(text)}
 function drawCars(){const q=el('search').value.toLowerCase().trim(),f=el('fuel').value,t=el('transmission').value;const list=cars.filter(c=>(`${c.name} ${c.year} ${c.fuel} ${c.transmission}`.toLowerCase().includes(q))&&(!f||c.fuel===f)&&(!t||c.transmission===t));el('inventory').innerHTML=list.length?list.map(c=>`<article class="car"><div class="photo" role="button" tabindex="0" data-view="${c.id}" aria-label="View ${safe(c.name)}"><img loading="lazy" src="${safe(c.photos[0]||sample)}" alt="${safe(c.name)}"><span class="photo-label">▧ ${c.photos.length} photo${c.photos.length===1?'':'s'} · View</span></div><div class="car-content"><h3>${safe(c.name)}</h3><div class="specs">${[c.year,c.fuel,c.transmission].filter(Boolean).map(s=>`<span>${safe(s)}</span>`).join('')||'<span>Add specifications</span>'}</div><div class="price">${safe(c.price)}</div><div class="car-actions"><button class="btn" data-view="${c.id}">View car & photos</button><button class="btn alt" data-add="${c.id}" aria-label="Add to enquiry list">＋</button></div></div></article>`).join(''):'<div class="empty">No cars match. Try a different search.</div>'}
