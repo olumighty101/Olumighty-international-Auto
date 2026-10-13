@@ -31,11 +31,46 @@
 <div class="modal" id="cartModal" role="dialog" aria-modal="true" aria-label="Enquiry list"><div class="modal-box"><button class="close" data-close="cartModal" aria-label="Close">×</button><div class="modal-info"><div class="eyebrow">Your shortlist</div><h2>Enquiry list</h2><p class="muted">Save cars you are interested in and send the list to our team.</p><div class="cart-items" id="cartItems"></div><div class="actions"><button class="btn" id="sendList">Send list on WhatsApp</button><button class="btn alt" data-close="cartModal">Continue browsing</button></div><div class="notice">This is an enquiry shortlist, not a payment checkout. Online payments require a secure server-side Paystack integration before customers can pay on this website.</div></div></div></div>
 <script>
 const sample='https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1200&q=80';
+
 const cars=[
-{id:1,name:'2018 Mercedes-Benz GLE 63 S',price:'₦65,000,000',year:'2018',fuel:'Petrol — V8 Bi-Turbo',transmission:'Automatic',description:'FRESH IN — FOREIGN USED. Accident-free 2018 Mercedes-Benz GLE 63 S featuring a panoramic sunroof, 360-degree camera, powerful V8 Bi-Turbo engine and suction-close doors. Price: ₦65,000,000 only. Contact Olumighty International Auto in Lagos to enquire.',photos:['images/IMG_3175.jpeg','https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=1200&q=80','https://images.unsplash.com/photo-1617469767053-d3b523a0b982?auto=format&fit=crop&w=1200&q=80']},
-  ...Array.from({length:19},(_,i)=>({id:i+2,name:`Car listing ${i+2} — add make, model and year`,price:'Add price',year:'',fuel:'',transmission:'',description:'Replace with the actual vehicle description, mileage, condition and features.',photos:[sample]}))
-];
-let selected=null,photoIndex=0,shortlist=[];const el=id=>document.getElementById(id);
+  {
+    id:1,
+    name:'2018 Mercedes-Benz GLE 63 S',
+    price:'₦65,000,000',
+    year:'2018',
+    fuel:'Petrol — V8 Bi-Turbo',
+    transmission:'Automatic',
+    description:'FRESH IN — FOREIGN USED. Accident-free 2018 Mercedes-Benz GLE 63 S featuring a panoramic sunroof, 360-degree camera, powerful V8 Bi-Turbo engine and suction-close doors. Price: ₦65,000,000 only. Contact Olumighty International Auto in Lagos to enquire.',
+    photos:[
+      'images/IMG_3175.jpeg',
+      'https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1617469767053-d3b523a0b982?auto=format&fit=crop&w=1200&q=80'
+    ]
+  },
+  {
+    id:2,
+    name:'2018 Mercedes-Benz GLE 400 4MATIC',
+    price:'₦37,000,000',
+    year:'2018',
+    fuel:'Petrol',
+    transmission:'Automatic',
+    description:'FOREIGN USED — BLACK EXTERIOR. 2018 Mercedes-Benz GLE 400 4MATIC, full option, automatic transmission and 4MATIC all-wheel drive. Price: ₦37,000,000. Contact Olumighty International Auto in Lagos for enquiries.',
+    photos:[
+      'images/Img_3179.jpeg',
+      'images/Img_3180.png'
+    ]
+  },
+  ...Array.from({length:18},(_,i)=>({
+    id:i+3,
+    name:`Car listing ${i+3} — add make, model and year`,
+    price:'Add price',
+    year:'',
+    fuel:'',
+    transmission:'',
+    description:'Add the actual vehicle condition, mileage, features and specifications here.',
+    photos:[sample]
+  }))
+];let selected=null,photoIndex=0,shortlist=[];const el=id=>document.getElementById(id);
 function safe(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 function wa(text){return 'https://wa.me/2348082761977?text='+encodeURIComponent(text)}
 function drawCars(){const q=el('search').value.toLowerCase().trim(),f=el('fuel').value,t=el('transmission').value;const list=cars.filter(c=>(`${c.name} ${c.year} ${c.fuel} ${c.transmission}`.toLowerCase().includes(q))&&(!f||c.fuel===f)&&(!t||c.transmission===t));el('inventory').innerHTML=list.length?list.map(c=>`<article class="car"><div class="photo" role="button" tabindex="0" data-view="${c.id}" aria-label="View ${safe(c.name)}"><img loading="lazy" src="${safe(c.photos[0]||sample)}" alt="${safe(c.name)}"><span class="photo-label">▧ ${c.photos.length} photo${c.photos.length===1?'':'s'} · View</span></div><div class="car-content"><h3>${safe(c.name)}</h3><div class="specs">${[c.year,c.fuel,c.transmission].filter(Boolean).map(s=>`<span>${safe(s)}</span>`).join('')||'<span>Add specifications</span>'}</div><div class="price">${safe(c.price)}</div><div class="car-actions"><button class="btn" data-view="${c.id}">View car & photos</button><button class="btn alt" data-add="${c.id}" aria-label="Add to enquiry list">＋</button></div></div></article>`).join(''):'<div class="empty">No cars match. Try a different search.</div>'}
