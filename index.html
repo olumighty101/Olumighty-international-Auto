@@ -76,8 +76,46 @@ const cars=[
     ]
   }
 ];
-
-let selected=null,photoIndex=0,shortlist=[];const el=id=>document.getElementById(id);function safe(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+,
+  {
+    id: 4,
+    name: '2024 Lexus LX 600 F Sport',
+    price: '₦195,000,000',
+    year: '2024',
+    fuel: 'Petrol',
+    transmission: 'Automatic',
+    description: 'FOREIGN USED — WHITE EXTERIOR. 2024 Lexus LX 600 F Sport featuring a luxurious leather interior, twin-turbo V6 engine, panoramic sunroof, premium infotainment, adaptive cruise control, advanced safety features and F Sport styling.',
+    photos: [
+      'images/IMG_3197.jpeg',
+      'images/IMG_3259.jpeg',
+      'images/IMG_3260.jpeg'
+    ]
+  },
+  {
+    id: 5,
+    name: '2018 Mercedes-Benz GLC 43 AMG',
+    price: '₦42,000,000',
+    year: '2018',
+    fuel: 'Petrol',
+    transmission: 'Automatic',
+    description: 'TOKUNBO — BLACK EXTERIOR. 2018 Mercedes-Benz GLC 43 AMG featuring AMG performance styling, V6 biturbo engine, leather sports seats, panoramic sunroof, navigation, reverse camera, parking sensors and premium comfort.',
+    photos: [
+      'images/IMG_3249.jpeg'
+    ]
+  },
+  {
+    id: 6,
+    name: '2015 Mercedes-Benz ML 400',
+    price: '₦25,000,000',
+    year: '2015',
+    fuel: 'Petrol',
+    transmission: 'Automatic',
+    description: 'TOKUNBO — BLACK EXTERIOR. 2015 Mercedes-Benz ML 400 featuring a V6 biturbo engine, leather interior, panoramic sunroof, navigation, reverse camera, parking sensors, dual-zone climate control and premium comfort.',
+    photos: [
+      'images/IMG_3250.jpeg'
+    ]
+  }
+  let selected=null,photoIndex=0,shortlist=[];const el=id=>document.getElementById(id);function safe(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 function wa(text){return 'https://wa.me/2348082761977?text='+encodeURIComponent(text)}
 function drawCars(){const q=el('search').value.toLowerCase().trim(),f=el('fuel').value,t=el('transmission').value;const list=cars.filter(c=>(`${c.name} ${c.year} ${c.fuel} ${c.transmission}`.toLowerCase().includes(q))&&(!f||c.fuel===f)&&(!t||c.transmission===t));el('inventory').innerHTML=list.length?list.map(c=>`<article class="car"><div class="photo" role="button" tabindex="0" data-view="${c.id}" aria-label="View ${safe(c.name)}"><img loading="lazy" src="${safe(c.photos[0]||sample)}" alt="${safe(c.name)}"><span class="photo-label">▧ ${c.photos.length} photo${c.photos.length===1?'':'s'} · View</span></div><div class="car-content"><h3>${safe(c.name)}</h3><div class="specs">${[c.year,c.fuel,c.transmission].filter(Boolean).map(s=>`<span>${safe(s)}</span>`).join('')||'<span>Add specifications</span>'}</div><div class="price">${safe(c.price)}</div><div class="car-actions"><button class="btn" data-view="${c.id}">View car & photos</button><button class="btn alt" data-add="${c.id}" aria-label="Add to enquiry list">＋</button></div></div></article>`).join(''):'<div class="empty">No cars match. Try a different search.</div>'}
 function openGallery(id){selected=cars.find(c=>c.id===id);if(!selected)return;photoIndex=0;drawGallery();el('galleryModal').classList.add('open');document.body.style.overflow='hidden'}
