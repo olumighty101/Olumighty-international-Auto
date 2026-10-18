@@ -136,27 +136,26 @@ const cars=[
     fuel: 'Petrol',
     transmission: 'Automatic',
     description: 'FOREIGN USED — WHITE EXTERIOR. 2019 Mercedes-Benz GLE 43 AMG featuring AMG styling, a twin-turbo V6 petrol engine, 4MATIC all-wheel drive, automatic transmission, premium interior, parking sensors, rear-view camera and panoramic sunroof. Please confirm the exact vehicle specifications.',
-    photos: [
+     photos: [
       'images/IMG_3248.jpeg'
     ]
-  }
-    {
+  },
+  {
     id: 9,
     name: "Toyota Tundra Custom Off-Road Pickup",
-    price: 50000000,
+    price: "₦50,000,000",
     fuel: "Petrol",
     transmission: "Automatic",
-    description: "CUSTOM OFF-ROAD BUILD • Rugged pickup styling • Oversized off-road tyres • Roof lights • Heavy-duty custom front bumper. Contact us to confirm specifications.",
+    description: "CUSTOM OFF-ROAD BUILD. Rugged pickup styling, oversized off-road tyres, roof lights and heavy-duty custom front bumper. Please confirm exact specifications.",
     photos: [
       "images/IMG_3307.jpeg",
       "images/IMG_3311.jpeg",
       "images/IMG_3312.jpeg",
       "images/IMG_3313.jpeg"
     ]
-  },
-  {
-  ];
-let selected=null,photoIndex=0,shortlist=[]; el=id=>document.getElementById(id);function safe(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+  }
+];
+  let selected=null,photoIndex=0,shortlist=[]; el=id=>document.getElementById(id);function safe(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 function wa(text){return 'https://wa.me/2348082761977?text='+encodeURIComponent(text)}
 function drawCars(){const q=el('search').value.toLowerCase().trim(),f=el('fuel').value,t=el('transmission').value;const list=cars.filter(c=>(`${c.name} ${c.year} ${c.fuel} ${c.transmission}`.toLowerCase().includes(q))&&(!f||c.fuel===f)&&(!t||c.transmission===t));el('inventory').innerHTML=list.length?list.map(c=>`<article class="car"><div class="photo" role="button" tabindex="0" data-view="${c.id}" aria-label="View ${safe(c.name)}"><img loading="lazy" src="${safe(c.photos[0]||sample)}" alt="${safe(c.name)}"><span class="photo-label">▧ ${c.photos.length} photo${c.photos.length===1?'':'s'} · View</span></div><div class="car-content"><h3>${safe(c.name)}</h3><div class="specs">${[c.year,c.fuel,c.transmission].filter(Boolean).map(s=>`<span>${safe(s)}</span>`).join('')||'<span>Add specifications</span>'}</div><div class="price">${safe(c.price)}</div><div class="car-actions"><button class="btn" data-view="${c.id}">View car & photos</button><button class="btn alt" data-add="${c.id}" aria-label="Add to enquiry list">＋</button></div></div></article>`).join(''):'<div class="empty">No cars match. Try a different search.</div>'}
 function openGallery(id){selected=cars.find(c=>c.id===id);if(!selected)return;photoIndex=0;drawGallery();el('galleryModal').classList.add('open');document.body.style.overflow='hidden'}
